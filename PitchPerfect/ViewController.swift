@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        stopBtn.isEnabled = false
         // Do any additional setup after loading the view.
     }
     
@@ -24,9 +25,14 @@ class ViewController: UIViewController {
     
     @IBAction func recordAction(_ sender: UIButton) {
         msgLab.text = "recording, press stop btn to stop record"
+        recordBtn.isEnabled = false
+        stopBtn.isEnabled = true
     }
     
     @IBAction func stopAction(_ sender: Any) {
+        msgLab.text = "tap to record"
+        recordBtn.isEnabled = true
+        stopBtn.isEnabled = false
     }
 }
 
