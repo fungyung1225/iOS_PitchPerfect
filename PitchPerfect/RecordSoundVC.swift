@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RecordSoundVC.swift
 //  PitchPerfect
 //
 //  Created by Fung on 5/3/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RecordSoundVC: UIViewController {
     @IBOutlet var recordBtn: UIButton!
     @IBOutlet var msgLab: UILabel!
     @IBOutlet var stopBtn: UIButton!
@@ -20,13 +20,21 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         print("view will appear")
     }
+    
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        print("didReceiveMemoryWarning")
+//    }
     
     @IBAction func recordAction(_ sender: UIButton) {
         msgLab.text = "recording, press stop btn to stop record"
         recordBtn.isEnabled = false
         stopBtn.isEnabled = true
+        
+        startRecord()
     }
     
     @IBAction func stopAction(_ sender: Any) {
@@ -34,5 +42,14 @@ class ViewController: UIViewController {
         recordBtn.isEnabled = true
         stopBtn.isEnabled = false
     }
-}
+    
+    func startRecord(){
+        print("start record func")
+        
+    }
+    
+    func stopRecord(){
+        print("stop record func")
+    }
+}//end of class
 
