@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,52 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tn9-0z-1YQ">
+                                <rect key="frame" x="182.5" y="433" width="49" height="30"/>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="recordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bFd-3U-whB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tap to record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLJ-Lj-kQD">
+                                <rect key="frame" x="156" y="471" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aL6-Ex-3PX">
+                                <rect key="frame" x="191" y="510" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3jl-4z-gUy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oLJ-Lj-kQD" firstAttribute="centerX" secondItem="tn9-0z-1YQ" secondAttribute="centerX" id="Iq2-Jy-v8y"/>
+                            <constraint firstItem="oLJ-Lj-kQD" firstAttribute="centerX" secondItem="aL6-Ex-3PX" secondAttribute="centerX" id="JqG-aS-o7N"/>
+                            <constraint firstItem="tn9-0z-1YQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="V6d-MX-dWS"/>
+                            <constraint firstItem="oLJ-Lj-kQD" firstAttribute="top" secondItem="tn9-0z-1YQ" secondAttribute="top" id="fgM-ex-295"/>
+                            <constraint firstItem="tn9-0z-1YQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kdP-RU-4ZV"/>
+                            <constraint firstItem="aL6-Ex-3PX" firstAttribute="top" secondItem="oLJ-Lj-kQD" secondAttribute="bottom" constant="18" id="rcd-xS-t6G"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="msgLab" destination="oLJ-Lj-kQD" id="bjb-mp-0fV"/>
+                        <outlet property="recordBtn" destination="tn9-0z-1YQ" id="2w7-M1-7TD"/>
+                        <outlet property="stopBtn" destination="aL6-Ex-3PX" id="fWo-ih-Ec8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="139"/>
         </scene>
     </scenes>
 </document>
